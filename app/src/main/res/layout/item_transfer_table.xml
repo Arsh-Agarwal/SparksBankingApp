@@ -2,28 +2,25 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/background_transfer_recycler_item"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginHorizontal="5dp"
-    android:layout_marginVertical="3dp">
+    android:layout_marginVertical="3dp"
+    android:background="@drawable/background_transfer_recycler_item"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/currentBalance"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0"
-        android:id="@+id/customerName"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:gravity="center_vertical"
-        android:textColor="@color/black"
-        android:text="Sample name"
+        app:layout_constraintHorizontal_bias="0"
         android:padding="5dp"
-        app:drawableStartCompat="@drawable/ic_person" />
+        android:text="From"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:id="@+id/fromAccount"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,42 +32,37 @@
         app:layout_constraintVertical_bias="0"
         app:layout_constraintHorizontal_bias="1"
         android:padding="5dp"
-        android:id="@+id/currentBalance"
-        android:text="200.00"
-        android:gravity="center_vertical"
-        android:textColor="@color/black"
+        android:text="Amount"
         android:textSize="16sp"
-        android:textStyle="italic|bold"
-        app:drawableStartCompat="@drawable/ic_round_balance" />
+        android:textColor="@color/black"
+        android:id="@+id/transferAmount"/>
+
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/customerName"
+        app:layout_constraintStart_toEndOf="@id/fromAccount"
+        app:layout_constraintEnd_toStartOf="@id/transferAmount"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0"
-        android:id="@+id/customerEmail"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:gravity="center_vertical"
-        android:text="sample.abc@gmail.com"
+        app:layout_constraintHorizontal_bias="0.5"
         android:padding="5dp"
-        android:textStyle="italic"
-        app:drawableStartCompat="@drawable/ic_round_email_24" />
+        android:text="To"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:id="@+id/toAccount"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/customerEmail"
+        app:layout_constraintTop_toBottomOf="@id/fromAccount"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0"
-        android:layout_marginHorizontal="2dp"
-        app:layout_constraintHorizontal_bias="0"
+        android:id="@+id/separator"
         android:background="@drawable/background_recyclerbar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

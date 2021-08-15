@@ -31,6 +31,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        ((Button) findViewById(R.id.viewAllTransfersBtn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,TransfersTableActivity.class);
+                startActivity(intent);
+            }
+        });
+
         setupDefaultCustomers();
     }
 
@@ -43,16 +51,16 @@ public class HomeActivity extends AppCompatActivity {
             editor.apply();
 
             MyRepository myRepository = new MyRepository(this);
-            myRepository.insertCustomer(new Customer("John","john1234@gmail.com",100d));
-            myRepository.insertCustomer(new Customer("Mark","markson678@gmail.com",150d));
-            myRepository.insertCustomer(new Customer("Sarah","sarahfowler@gmail.com",165.87d));
-            myRepository.insertCustomer(new Customer("Harry","harrypotteroriginal@gmail.com",106.12d));
-            myRepository.insertCustomer(new Customer("Omer","omeriplikci@yahoo.com",100.12d));
-            myRepository.insertCustomer(new Customer("Cassie","cassiejohnson@xyz.com",5.01d));
-            myRepository.insertCustomer(new Customer("Marie","mariecooper@abc.com",10000.65d));
-            myRepository.insertCustomer(new Customer("Skyler","skylerwhite@gmail.com",103.85d));
-            myRepository.insertCustomer(new Customer("Mr. Hunderson","hundersonsuper@gmail.com",1099.47d));
-            myRepository.insertCustomer(new Customer("Miss Potts","pepperpotts@yahoo.com",100.98d));
+            myRepository.insertCustomer(new Customer("Remus","lupin@dada.com",100d));
+            myRepository.insertCustomer(new Customer("Sirius","black@godfather.com",150d));
+            myRepository.insertCustomer(new Customer("James","potter@wizard.com",165.87d));
+            myRepository.insertCustomer(new Customer("Dobby","free@elf.com",106.12d));
+            myRepository.insertCustomer(new Customer("Bellatrix","creepy@hair.com",100.12d));
+            myRepository.insertCustomer(new Customer("Umbridge","dolores@azkaban.com",5.01d));
+            myRepository.insertCustomer(new Customer("McGonagall","transfiguration@witch.com",10000.65d));
+            myRepository.insertCustomer(new Customer("Albus","moonglasses@gmail.com",103.85d));
+            myRepository.insertCustomer(new Customer("Draco","fullmoon@gmail.com",1099.47d));
+            myRepository.insertCustomer(new Customer("Harry","ninethreefourth@yahoo.com",100.98d));
         }
     }
 }

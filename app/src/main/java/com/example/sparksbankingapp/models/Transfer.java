@@ -2,6 +2,7 @@ package com.example.sparksbankingapp.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
@@ -14,22 +15,33 @@ public class Transfer {
     private int transferId;
 
     @ColumnInfo(name = "transferFromCustomerId")
-    private int transferFromCustomerId;
+    private String transferFromCustomerName;
 
     @ColumnInfo(name = "transferToCustomerId")
-    private int transferToCustomerId;
+    private String transferToCustomerName;
 
     @ColumnInfo(name = "amount")
     private double amount;
 
 
+    @Ignore
     public Transfer() {
     }
 
-    public Transfer(int transferFromCustomerId, int transferToCustomerId, double amount) {
-        this.transferFromCustomerId = transferFromCustomerId;
-        this.transferToCustomerId = transferToCustomerId;
+    public Transfer(String transferFromCustomerName, String transferToCustomerName, double amount) {
+        this.transferFromCustomerName = transferFromCustomerName;
+        this.transferToCustomerName = transferToCustomerName;
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Transfer{" +
+                "transferId=" + transferId +
+                ", transferFromCustomerName='" + transferFromCustomerName + '\'' +
+                ", transferToCustomerName='" + transferToCustomerName + '\'' +
+                ", amount=" + amount +
+                '}';
     }
 
     @Override
@@ -38,24 +50,14 @@ public class Transfer {
         if (o == null || getClass() != o.getClass()) return false;
         Transfer transfer = (Transfer) o;
         return transferId == transfer.transferId &&
-                transferFromCustomerId == transfer.transferFromCustomerId &&
-                transferToCustomerId == transfer.transferToCustomerId &&
-                Double.compare(transfer.amount, amount) == 0;
+                Double.compare(transfer.amount, amount) == 0 &&
+                Objects.equals(transferFromCustomerName, transfer.transferFromCustomerName) &&
+                Objects.equals(transferToCustomerName, transfer.transferToCustomerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(transferId, transferFromCustomerId, transferToCustomerId, amount);
-    }
-
-    @Override
-    public String toString() {
-        return "Transfer{" +
-                "transferId=" + transferId +
-                ", transferFromCustomerId=" + transferFromCustomerId +
-                ", transferToCustomerId=" + transferToCustomerId +
-                ", amount=" + amount +
-                '}';
+        return Objects.hash(transferId, transferFromCustomerName, transferToCustomerName, amount);
     }
 
     public int getTransferId() {
@@ -66,20 +68,20 @@ public class Transfer {
         this.transferId = transferId;
     }
 
-    public int getTransferFromCustomerId() {
-        return transferFromCustomerId;
+    public String getTransferFromCustomerName() {
+        return transferFromCustomerName;
     }
 
-    public void setTransferFromCustomerId(int transferFromCustomerId) {
-        this.transferFromCustomerId = transferFromCustomerId;
+    public void setTransferFromCustomerName(String transferFromCustomerName) {
+        this.transferFromCustomerName = transferFromCustomerName;
     }
 
-    public int getTransferToCustomerId() {
-        return transferToCustomerId;
+    public String getTransferToCustomerName() {
+        return transferToCustomerName;
     }
 
-    public void setTransferToCustomerId(int transferToCustomerId) {
-        this.transferToCustomerId = transferToCustomerId;
+    public void setTransferToCustomerName(String transferToCustomerName) {
+        this.transferToCustomerName = transferToCustomerName;
     }
 
     public double getAmount() {

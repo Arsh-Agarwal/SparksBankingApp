@@ -2,15 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.SparksBankingApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/cyan_primary</item>
-        <item name="colorPrimaryVariant">@color/cyan_primary_dark</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/orange_primary</item>
-        <item name="colorSecondaryVariant">@color/orange_primary_dark</item>
+        <item name="colorSecondary">@color/secondary_primary</item>
+        <item name="colorSecondaryVariant">@color/secondary_primary_dark</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <item name="colorControlNormal">@color/orange_primary</item>
+        <item name="colorControlNormal">@color/secondary_primary</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

@@ -26,4 +26,7 @@ public interface MyDao {
 
     @Query("SELECT * FROM customers ORDER BY name ASC")
     LiveData<List<Customer>> getAllCustomers();
+
+    @Query("SELECT * FROM transfers ORDER BY id DESC")
+    LiveData<List<Transfer>> getAllTransfers();
 }

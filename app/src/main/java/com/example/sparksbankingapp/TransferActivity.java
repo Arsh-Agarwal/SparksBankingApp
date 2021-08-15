@@ -17,6 +17,8 @@ import com.example.sparksbankingapp.adapters.TransferRecycelrAdapter;
 import com.example.sparksbankingapp.models.Customer;
 import com.example.sparksbankingapp.models.Transfer;
 import com.example.sparksbankingapp.room_persistence.MyRepository;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,23 +102,21 @@ public class TransferActivity extends AppCompatActivity implements RecyclerInter
         transferFromCustomer.setCurrenctBalance(transferFromCustomer.getCurrenctBalance()-amount);
         transferToCustomer.setCurrenctBalance(transferToCustomer.getCurrenctBalance()+amount);
 
-        myRepository.insertTransfer(new Transfer(transferFromCustomer.getCustomerId(),transferToCustomer.getCustomerId(),amount));
+        myRepository.insertTransfer(new Transfer(transferFromCustomer.getCustomerName(),transferToCustomer.getCustomerName(),amount));
         myRepository.updateCustomer(transferFromCustomer);
         myRepository.updateCustomer(transferToCustomer);
 
-        toastMessage("Transferred "+String.format(Locale.US,"%.2f",amount)+" to "+transferToCustomer.getCustomerName());
-        exitActivity();
+        showTransferCompleteSnackBar("Transferred "+String.format(Locale.US,"%.2f",amount)+" to "+transferToCustomer.getCustomerName());
     }
 
     //utils
+    private void toastMessage(String message){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
     private void exitActivity(){
         setResult(RESULT_OK);
         super.finish();
-    }
-
-    private void toastMessage(String message){
-        Log.d(TAG, "toastMessage: "+message);
-        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
     }
 
     private void showSoftInput(View view){
@@ -124,5 +124,17 @@ public class TransferActivity extends AppCompatActivity implements RecyclerInter
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.showSoftInput(view,InputMethodManager.SHOW_IMPLICIT);
         }
+    }
+
+    private void showTransferCompleteSnackBar(String message){
+        Snackbar.make(findViewById(R.id.parentLayout),message,1000)
+                .addCallback(new BaseTransientBottomBar.BaseCallback<Snackbar>() {
+                    @Override
+                    public void onDismissed(Snackbar transientBottomBar, int event) {
+                        super.onDismissed(transientBottomBar, event);
+                        exitActivity();
+                    }
+                })
+                .show();
     }
 }

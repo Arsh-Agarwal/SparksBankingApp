@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimary">
+    android:background="@color/white"
+    android:id="@+id/parentLayout">
 
     <TextView
         android:id="@+id/amountLabel"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Amount:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -36,7 +37,7 @@
         android:background="@drawable/background_text_views"
         android:layout_marginHorizontal="5dp"
         android:padding="5dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/amountLabel"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,13 +46,25 @@
         app:layout_constraintTop_toTopOf="@id/amountLabel"
         app:layout_constraintVertical_bias="0.5" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/amountLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="5dp"
+        android:id="@+id/separator"
+        android:background="?attr/colorSecondaryVariant"/>
+
     <TextView
         android:id="@+id/transferAmountToLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text=" Transfer the amount to..."
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -61,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/amountLabel"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         app:layout_constraintVertical_bias="0"
         app:drawableStartCompat="@drawable/ic_round_swap_vert_24" />
 

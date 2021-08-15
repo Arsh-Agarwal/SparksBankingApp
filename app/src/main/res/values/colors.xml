@@ -8,15 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="cyan_primary">#00BCD4</color>
-    <color name="cyan_primary_dark">#0096A7</color>
-    <!--<color name="orange_primary">#FA3713</color>-->
-    <color name="orange_primary">#ff6640</color>
-    <color name="orange_primary_dark">#D41900</color>
-    <color name="cyan_200">#80deea</color>
-    <color name="cyan_50">#e0f7fa</color>
-    <color name="cyan_600">#00abc1</color>
-    
-    <color name="green_400">#00cb6b</color>
-    <color name="blue_500">#0051d4</color>
+    <color name="light_gray">#eeeeee</color>
+
+    <color name="primary">#1e88e5</color>
+    <color name="primary_dark">#1565c0</color>
+    <color name="primary_very_light">#e3f2fd</color>
+
+    <color name="secondary_primary">#e91e63</color>
+    <color name="secondary_primary_dark">#c2185b</color>
+    <color name="seconadry_very_light">#fce4ec</color>
 </resources>

@@ -35,4 +35,8 @@ public class MyRepository {
     public LiveData<List<Customer>> getAllCustomers(){
         return myDatabase.getMyDao().getAllCustomers();
     }
+
+    public LiveData<List<Transfer>> getAllTransfers(){
+        return myDatabase.getMyDao().getAllTransfers();
+    }
 }
