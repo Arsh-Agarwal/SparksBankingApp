@@ -51,16 +51,16 @@ public class HomeActivity extends AppCompatActivity {
             editor.apply();
 
             MyRepository myRepository = new MyRepository(this);
-            myRepository.insertCustomer(new Customer("Remus","lupin@dada.com",100d));
-            myRepository.insertCustomer(new Customer("Sirius","black@godfather.com",150d));
-            myRepository.insertCustomer(new Customer("James","potter@wizard.com",165.87d));
-            myRepository.insertCustomer(new Customer("Dobby","free@elf.com",106.12d));
-            myRepository.insertCustomer(new Customer("Bellatrix","creepy@hair.com",100.12d));
-            myRepository.insertCustomer(new Customer("Umbridge","dolores@azkaban.com",5.01d));
-            myRepository.insertCustomer(new Customer("McGonagall","transfiguration@witch.com",10000.65d));
-            myRepository.insertCustomer(new Customer("Albus","moonglasses@gmail.com",103.85d));
-            myRepository.insertCustomer(new Customer("Draco","fullmoon@gmail.com",1099.47d));
-            myRepository.insertCustomer(new Customer("Harry","ninethreefourth@yahoo.com",100.98d));
+            myRepository.insertCustomer(new Customer("John","johnmarkson@gmail.com",100d));
+            myRepository.insertCustomer(new Customer("Mark","markjohnson@gmail.com",150d));
+            myRepository.insertCustomer(new Customer("Ross","rossgeller@yahoo.com",165.87d));
+            myRepository.insertCustomer(new Customer("Rachel","rachelgreene@iitkgp.ac.in",106.12d));
+            myRepository.insertCustomer(new Customer("Monica","monicageller@iitkgp.ac.in",100.12d));
+            myRepository.insertCustomer(new Customer("Chandler","bingaling@yahoo.com",5.01d));
+            myRepository.insertCustomer(new Customer("Joey","tribbiani@gmail.com",10000.65d));
+            myRepository.insertCustomer(new Customer("Phoebe","iamphoebe@gmail.com",103.85d));
+            myRepository.insertCustomer(new Customer("Ronald","ronaldWeasley@gmail.com",1099.47d));
+            myRepository.insertCustomer(new Customer("Harry","harrypotter@yahoo.com",100.98d));
         }
     }
 }
